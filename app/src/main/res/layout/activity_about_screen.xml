@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeScreen"
-    tools:layout_editor_absoluteY="25dp">
+    tools:context=".AboutScreen">
 
     <ImageView
         android:id="@+id/imageView"
@@ -16,20 +15,12 @@
         android:src="@drawable/blk_guitar" />
 
     <Button
-        android:id="@+id/playButton"
+        android:id="@+id/returnButton"
         android:layout_width="226dp"
         android:layout_height="65dp"
         android:background="@drawable/buttonstyle"
-        android:text="@string/play"
+        android:text="@string/returnToHome"
         tools:layout_editor_absoluteX="187dp"
         tools:layout_editor_absoluteY="613dp" />
 
-    <Button
-        android:id="@+id/aboutButton"
-        android:layout_width="226dp"
-        android:layout_height="65dp"
-        android:background="@drawable/buttonstyle"
-        android:text="@string/about"
-        tools:layout_editor_absoluteX="187dp"
-        tools:layout_editor_absoluteY="724dp" />
 </android.support.constraint.ConstraintLayout>

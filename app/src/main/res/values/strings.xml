@@ -3,4 +3,7 @@
     <string name="play">Play</string>
     <string name="about">About</string>
     <string name="returnToHome">Return</string>
+    <string name="about_description">GuessThatChord is an ear training tool for those who want to practice their chord recognition skills. </string>
+    <string name="about_description2">For each question, try to identify the chord that is played without any reference to another. </string>
+    <string name="about_description3">Practice daily to master perfect pitch!</string>
 </resources>

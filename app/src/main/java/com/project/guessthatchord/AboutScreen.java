@@ -15,7 +15,7 @@ public class AboutScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_screen);
 
-        returnButton=(Button) findViewById(R.id.returnButton);
+        returnButton=(Button) findViewById(R.id.returnToHome);
 
         returnButton.setOnClickListener(new View.OnClickListener() {
             @Override

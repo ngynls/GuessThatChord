@@ -8,10 +8,14 @@ public class DbContract {
 
     public static class DbTable implements BaseColumns{
         public static final String DB_NAME="GuessThatChord";
+        public static final String COLUMN_AUDIO="audio";
         public static final String COLUMN_QUESTION="question";
-        public static final String COLUMN_CHOICE_A="choice a";
-        public static final String COLUMN_CHOICE_B="choice b";
-        public static final String COLUMN_CHOICE_C="choice c";
-        public static final String COLUMN_CHOICE_D="choice d";
+        public static final String COLUMN_OPTION_A="option a";
+        public static final String COLUMN_OPTION_B="option b";
+        public static final String COLUMN_OPTION_C="option c";
+        public static final String COLUMN_OPTION_D="option d";
+        public static final String COLUMN_HINT="hint";
+        public static final String COLUMN_ANSWER="answer";
+        public static final String COLUMN_ANSWER_VERBOSE="answer_verbose";
     }
 }

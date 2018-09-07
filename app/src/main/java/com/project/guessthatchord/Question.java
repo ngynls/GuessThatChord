@@ -7,7 +7,9 @@ public class Question {
     private String optionB;
     private String optionC;
     private String optionD;
+    private String hint;
     private String answer;
+    private String answer_verbose;
 
     public Question(){
         audioSource="/audiofiles/test.wav";
@@ -15,16 +17,20 @@ public class Question {
         optionB="";
         optionC="";
         optionD="";
+        hint="";
         answer="";
+        answer_verbose="";
     }
 
-    public Question(String audioSource, String choiceA, String choiceB, String choiceC, String choiceD, String answer ){
+    public Question(String audioSource, String choiceA, String choiceB, String choiceC, String choiceD, String hint, String answer, String answer_verbose ){
         this.audioSource=audioSource;
         this.optionA=choiceA;
         this.optionB=choiceB;
         this.optionC=choiceC;
         this.optionD=choiceD;
+        this.hint=hint;
         this.answer=answer;
+        this.answer_verbose=answer_verbose;
     }
 
     public String getAudioSource(){
@@ -47,8 +53,16 @@ public class Question {
         return optionD;
     }
 
+    public String getHint(){
+        return hint;
+    }
+
     public String getAnswer(){
         return answer;
+    }
+
+    public String getAnswer_verbose() {
+        return answer_verbose;
     }
 
     public void setAudioSource(String audioSource) {
@@ -71,7 +85,15 @@ public class Question {
         this.optionD=optionD;
     }
 
+    public void setHint(String hint){
+        this.hint=hint;
+    }
+
     public void setAnswer(String answer){
         this.answer=answer;
+    }
+
+    public void setAnswer_verbose(String answer_verbose){
+        this.answer_verbose=answer_verbose;
     }
 }

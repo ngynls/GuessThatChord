@@ -4,11 +4,10 @@ import android.provider.BaseColumns;
 
 public class DbContract {
 
-    private DbContract(){}
+    public DbContract(){}
 
     public static class DbTable implements BaseColumns{
         public static final String DB_NAME="GuessThatChord";
-        public static final String COLUMN_AUDIO="audio";
         public static final String COLUMN_QUESTION="question";
         public static final String COLUMN_OPTION_A="option a";
         public static final String COLUMN_OPTION_B="option b";

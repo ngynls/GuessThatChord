@@ -18,16 +18,15 @@ public class DbHelper extends SQLiteOpenHelper {
 
     private SQLiteDatabase db;
 
-    public DbHelper(Context context) {
+    DbHelper(Context context) {
         super(context, DB_NAME,null, DB_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         this.db=sqLiteDatabase;
-        final String sql= String.format("CREATE TABLE IF NOT EXISTS " + DbTable.DB_NAME +
-                        " ( %s INT PRIMARY KEY AUTOINCREMENT, %s TEXT, %s TEXT, %s TEXT, %s TEXT, %s TEXT, %s TEXT, %s TEXT, %s TEXT)",
-                DbTable._ID, DbTable.COLUMN_QUESTION,DbTable.COLUMN_OPTION_A,DbTable.COLUMN_OPTION_B,DbTable.COLUMN_OPTION_C,DbTable.COLUMN_OPTION_D,
+        final String sql= String.format("CREATE TABLE IF NOT EXISTS %s ( %s INT PRIMARY KEY AUTOINCREMENT, %s TEXT, %s TEXT, %s TEXT, %s TEXT, %s TEXT, %s TEXT, %s TEXT, %s TEXT)",
+                DbTable.DB_NAME, DbTable._ID, DbTable.COLUMN_QUESTION,DbTable.COLUMN_OPTION_A,DbTable.COLUMN_OPTION_B,DbTable.COLUMN_OPTION_C,DbTable.COLUMN_OPTION_D,
                 DbTable.COLUMN_HINT,DbTable.COLUMN_ANSWER,DbTable.COLUMN_ANSWER_VERBOSE);
         db.execSQL(sql);
         addQuestions();
@@ -42,6 +41,7 @@ public class DbHelper extends SQLiteOpenHelper {
     private void addQuestions() {
         //Major chords
         Question q1=new Question("/audiofiles/C.wav","E","D","C","F","C_","C","C major");
+        addQuestion(q1);
         //Minor chords
     }
 
@@ -60,7 +60,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
     public List<Question> getAllQuestions(){
         List<Question> allQuestions=new ArrayList<>();
-        db=getReadableDatabase();
+        db=this.getReadableDatabase();
         String sql="SELECT * FROM "+DbTable.DB_NAME;
         Cursor c=db.rawQuery(sql,null);
 
@@ -77,8 +77,8 @@ public class DbHelper extends SQLiteOpenHelper {
                 q.setAnswer_verbose(c.getString(c.getColumnIndex(DbTable.COLUMN_ANSWER_VERBOSE)));
                 allQuestions.add(q);
             }while(c.moveToNext());
+            c.close();
         }
-        c.close();
         return allQuestions;
     }
 }

@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.Button;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -33,9 +34,9 @@ public class MainActivity extends AppCompatActivity {
 
         //TODO:Fix DbHelper getting all questions
         DbHelper helper=new DbHelper(this);
-        //questionList=helper.getAllQuestions();
-        //totalQuestionCount=questionList.size();
-        //Collections.shuffle(questionList);
+        questionList=helper.getAllQuestions();
+        totalQuestionCount=questionList.size();
+        Collections.shuffle(questionList);
 
         audioButton=findViewById(R.id.playButton);
         optionA=findViewById(R.id.optionA);
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         optionD=findViewById(R.id.optionD);
         submit=findViewById(R.id.submit);
 
-        //setQuestionOnScreen();
+        setQuestionOnScreen();
 
         audioButton.setOnClickListener(new View.OnClickListener() {
             @Override

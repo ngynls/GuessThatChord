@@ -25,7 +25,7 @@ public class DbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         db=sqLiteDatabase;
-        final String sql= String.format("CREATE TABLE %s ( %s INTEGER PRIMARY KEY AUTOINCREMENT, %s TEXT, %s TEXT, %s TEXT, %s TEXT, %s TEXT, %s TEXT, %s TEXT, %s TEXT)",
+        final String sql= String.format("CREATE TABLE IF NOT EXISTS %s ( %s INTEGER PRIMARY KEY AUTOINCREMENT, %s TEXT, %s TEXT, %s TEXT, %s TEXT, %s TEXT, %s TEXT, %s TEXT, %s TEXT)",
                 DbTable.DB_NAME, DbTable._ID, DbTable.COLUMN_QUESTION,DbTable.COLUMN_OPTION_A,DbTable.COLUMN_OPTION_B,DbTable.COLUMN_OPTION_C,DbTable.COLUMN_OPTION_D,
                 DbTable.COLUMN_HINT,DbTable.COLUMN_ANSWER,DbTable.COLUMN_ANSWER_VERBOSE);
         db.execSQL(sql);
@@ -39,10 +39,10 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
     private void addQuestions() {
-        //Major chords
-        Question q1=new Question("/audiofiles/C.wav","E","D","C","F","C_","C","C major");
+        //TODO:Major chords
+        Question q1=new Question("cmajor","E","D","C","F","C_","C","C major");
         addQuestion(q1);
-        //Minor chords
+        //TODO:Minor chords
     }
 
     private void addQuestion(Question q){

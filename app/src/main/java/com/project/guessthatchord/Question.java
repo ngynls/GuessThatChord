@@ -12,7 +12,7 @@ public class Question {
     private String answer_verbose;
 
     public Question(){
-        audioSource="/audiofiles/test.wav";
+        audioSource="test";
         optionA="";
         optionB="";
         optionC="";

@@ -3,12 +3,11 @@ package com.project.guessthatchord;
 import android.support.v7.app.AppCompatActivity;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Button;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -32,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //TODO:Fix DbHelper getting all questions
         DbHelper helper=new DbHelper(this);
         questionList=helper.getAllQuestions();
         totalQuestionCount=questionList.size();
@@ -50,19 +48,19 @@ public class MainActivity extends AppCompatActivity {
         audioButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //add media player
+                //TODO:to update db with new values, reinstall the app in the emulator
                 try {
-                    mediaPlayer=new MediaPlayer();
-                    mediaPlayer.setDataSource(currentQuestion.getAudioSource());
+                    int resId=getResources().getIdentifier(currentQuestion.getAudioSource(),"raw",getPackageName());
+                    mediaPlayer=MediaPlayer.create(MainActivity.this, resId);
                     mediaPlayer.start();
-                } catch (IOException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         });
     }
 
-    private void setQuestionOnScreen(){
+    protected void setQuestionOnScreen(){
 
         currentQuestion=questionList.get(count);
         if(count<totalQuestionCount){

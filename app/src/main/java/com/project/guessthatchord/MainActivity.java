@@ -11,15 +11,13 @@ import android.widget.Button;
 import java.util.Collections;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     ImageView audioButton;
     MediaPlayer mediaPlayer;
-    Button optionA;
-    Button optionB;
-    Button optionC;
-    Button optionD;
-    Button submit;
+    Button [] btn=new Button[4];
+    int[] btn_id={R.id.optionA,R.id.optionB,R.id.optionC,R.id.optionD};
+
 
     List<Question> questionList;
     private Question currentQuestion;
@@ -37,11 +35,10 @@ public class MainActivity extends AppCompatActivity {
         Collections.shuffle(questionList);
 
         audioButton=findViewById(R.id.playButton);
-        optionA=findViewById(R.id.optionA);
-        optionB=findViewById(R.id.optionB);
-        optionC=findViewById(R.id.optionC);
-        optionD=findViewById(R.id.optionD);
-        submit=findViewById(R.id.submit);
+        for(int i=0; i<btn.length;i++){
+            btn[i]=findViewById(btn_id[i]);
+            btn[i].setOnClickListener(this);
+        }
 
         setQuestionOnScreen();
 
@@ -64,10 +61,10 @@ public class MainActivity extends AppCompatActivity {
 
         currentQuestion=questionList.get(count);
         if(count<totalQuestionCount){
-            optionA.setText(currentQuestion.getOptionA());
-            optionB.setText(currentQuestion.getOptionB());
-            optionC.setText(currentQuestion.getOptionC());
-            optionD.setText(currentQuestion.getOptionD());
+            btn[0].setText(currentQuestion.getOptionA());
+            btn[1].setText(currentQuestion.getOptionB());
+            btn[2].setText(currentQuestion.getOptionC());
+            btn[3].setText(currentQuestion.getOptionD());
         }
         else{
             endQuiz();
@@ -78,4 +75,32 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.optionA:
+                checkAnswer(0);
+                break;
+            case R.id.optionB:
+                checkAnswer(1);
+                break;
+            case R.id.optionC:
+                checkAnswer(2);
+                break;
+            case R.id.optionD:
+                checkAnswer(3);
+                break;
+        }
+    }
+
+    private void checkAnswer(int i) {
+        String yourAnswer=btn[i].getText().toString();
+        if(yourAnswer.equals(currentQuestion.getAnswer())){
+            Log.i("log","Correct answer!");
+        }
+        else{
+            Log.i("log","Wrong answer!"+" The correct answer is " + currentQuestion.getAnswer());
+        }
+
+    }
 }

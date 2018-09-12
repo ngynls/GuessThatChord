@@ -42,7 +42,7 @@
                 app:srcCompat="@drawable/checkbox" />
 
             <Button
-                android:id="@+id/next"
+                android:id="@+id/nextQuestion"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:text="@string/nextQuestion"

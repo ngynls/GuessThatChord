@@ -1,6 +1,8 @@
 package com.project.guessthatchord;
 
 import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -19,7 +21,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Dialog dialogBox;
     Button [] btn=new Button[4];
     int[] btn_id={R.id.optionA,R.id.optionB,R.id.optionC,R.id.optionD};
-
+    ImageView correctAnswerImg, incorrectAnswerImg;
+    Button nextQuestion, tryAgain;
 
     List<Question> questionList;
     private Question currentQuestion;
@@ -113,7 +116,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     private void displayPositiveDialog() {
-        //TODO:Link the correct answer dialog box to the app
+        dialogBox.setContentView(R.layout.popup_correct_answer);
+        correctAnswerImg=(ImageView)dialogBox.findViewById(R.id.correctAnswerImg);
+        nextQuestion=(Button)dialogBox.findViewById(R.id.nextQuestion);
+
+        nextQuestion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setQuestionOnScreen();
+            }
+        });
+
+        dialogBox.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialogBox.show();
+
     }
 
     private void displayNegativeDialog() {

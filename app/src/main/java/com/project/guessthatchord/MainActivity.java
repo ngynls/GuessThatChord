@@ -133,6 +133,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void displayNegativeDialog() {
-        //TODO:Link the incorrect answer dialog box to the app
+        dialogBox.setContentView(R.layout.popup_incorrect_answer);
+        incorrectAnswerImg=(ImageView)dialogBox.findViewById(R.id.wrongAnswerImg);
+        tryAgain=(Button)dialogBox.findViewById(R.id.tryAgain);
+
+        tryAgain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialogBox.dismiss();
+            }
+        });
+
+        dialogBox.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialogBox.show();
     }
 }

@@ -11,4 +11,8 @@
     <string name="optionC">Option C</string>
     <string name="optionD">Option D</string>
     <string name="submit">Submit result</string>
+    <string name="correct">Correct answer!</string>
+    <string name="wrong">Wrong answer!</string>
+    <string name="nextQuestion">Next Question</string>
+    <string name="tryAgain">Try again</string>
 </resources>

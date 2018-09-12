@@ -35,14 +35,14 @@
                 android:textStyle="bold" />
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/correctAnswerImg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/correct"
                 app:srcCompat="@drawable/checkbox" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/next"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:text="@string/nextQuestion"

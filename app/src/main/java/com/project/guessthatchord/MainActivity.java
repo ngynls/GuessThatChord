@@ -1,5 +1,6 @@
 package com.project.guessthatchord;
 
+import android.app.Dialog;
 import android.support.v7.app.AppCompatActivity;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     ImageView audioButton;
     MediaPlayer mediaPlayer;
+    Dialog dialogBox;
     Button [] btn=new Button[4];
     int[] btn_id={R.id.optionA,R.id.optionB,R.id.optionC,R.id.optionD};
 
@@ -28,6 +30,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        dialogBox=new Dialog(this);
 
         DbHelper helper=new DbHelper(this);
         questionList=helper.getAllQuestions();
@@ -97,10 +101,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String yourAnswer=btn[i].getText().toString();
         if(yourAnswer.equals(currentQuestion.getAnswer())){
             Log.i("log","Correct answer!");
+            displayPositiveDialog();
+            count++;
         }
         else{
             Log.i("log","Wrong answer!"+" The correct answer is " + currentQuestion.getAnswer());
+            displayNegativeDialog();
         }
 
+    }
+
+
+    private void displayPositiveDialog() {
+        //TODO:Link the correct answer dialog box to the app
+    }
+
+    private void displayNegativeDialog() {
+        //TODO:Link the incorrect answer dialog box to the app
     }
 }

@@ -35,14 +35,14 @@
                 android:textStyle="bold" />
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/wrongAnswerImg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/wrong"
                 app:srcCompat="@drawable/mark" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/tryAgain"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:text="@string/tryAgain"

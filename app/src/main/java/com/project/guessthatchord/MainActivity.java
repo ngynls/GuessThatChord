@@ -65,7 +65,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     protected void setQuestionOnScreen(){
-
         currentQuestion=questionList.get(count);
         if(count<totalQuestionCount){
             btn[0].setText(currentQuestion.getOptionA());
@@ -126,6 +125,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View view) {
                 setQuestionOnScreen();
+                dialogBox.dismiss();
             }
         });
 

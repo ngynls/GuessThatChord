@@ -39,9 +39,20 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
     private void addQuestions() {
-        //TODO:Major chords
         Question q1=new Question("cmajor","E","D","C","F","C_","C","C major");
         addQuestion(q1);
+        Question q2=new Question("dmajor","D","G","E","C","D_","D","D major");
+        addQuestion(q2);
+        Question q3=new Question("emajor","C","A","D","E","E_","E","E major");
+        addQuestion(q3);
+        Question q4=new Question("fmajor","Bb","F","C","A","F_","F","F major");
+        addQuestion(q4);
+        Question q5=new Question("gmajor","G","Cadd9","A","Bb","G_","G","G major");
+        addQuestion(q5);
+        Question q6=new Question("amajor","Dmaj9","A","F#m7","B","A_","A","A major");
+        addQuestion(q6);
+        Question q7=new Question("bmajor","D#","F#","B","E","B_","B","B major");
+        addQuestion(q7);
         //TODO:Minor chords
     }
 

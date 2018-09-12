@@ -79,6 +79,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void endQuiz(){
+        count=0;
+        //TODO: find another way to end the program since finish() crashes the app
         finish();
     }
 

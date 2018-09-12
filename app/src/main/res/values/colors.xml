@@ -8,4 +8,5 @@
     <color name="correct">#98C261</color>
     <color name="incorrect">#D4786A</color>
     <color name="greenDark">#247b39</color>
+    <color name="redDark">#801b21</color>
 </resources>

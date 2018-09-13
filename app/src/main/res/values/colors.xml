@@ -9,4 +9,6 @@
     <color name="incorrect">#D4786A</color>
     <color name="greenDark">#247b39</color>
     <color name="redDark">#801b21</color>
+    <color name="grayish">#948888</color>
+    <color name="grayishDark">#302A2A</color>
 </resources>

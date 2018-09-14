@@ -6,32 +6,32 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class HomeScreen extends AppCompatActivity {
+public class TrainingModeActivity extends AppCompatActivity {
 
     //Declare button elements as member variables
-    Button playButton;
-    Button aboutButton;
+    Button mcqButton;
+    Button sttButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_screen);
+        setContentView(R.layout.training_mode_screen);
 
-        playButton=(Button) findViewById(R.id.playButton);
-        aboutButton=(Button) findViewById(R.id.aboutButton);
+        mcqButton=(Button) findViewById(R.id.mcqButton);
+        sttButton=(Button) findViewById(R.id.sttButton);
 
-        playButton.setOnClickListener(new View.OnClickListener() {
+        mcqButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(),TrainingModeActivity.class);
+                Intent intent=new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(intent);
             }
         });
 
-        aboutButton.setOnClickListener(new View.OnClickListener() {
+        sttButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(),AboutScreen.class);
+                Intent intent=new Intent(getApplicationContext(),SttActivity.class);
                 startActivity(intent);
             }
         });

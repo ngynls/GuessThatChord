@@ -159,6 +159,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         returnToMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //TODO:go back to the main menu not the training mode
                 dialogBox.dismiss();
                 finish();
             }

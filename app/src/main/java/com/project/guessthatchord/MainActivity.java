@@ -21,8 +21,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Dialog dialogBox;
     Button [] btn=new Button[4];
     int[] btn_id={R.id.optionA,R.id.optionB,R.id.optionC,R.id.optionD};
-    ImageView correctAnswerImg, incorrectAnswerImg;
-    Button nextQuestion, tryAgain;
+    ImageView correctAnswerImg, incorrectAnswerImg, starImg;
+    Button nextQuestion, tryAgain, returnToMenu;
 
     List<Question> questionList;
     private Question currentQuestion;
@@ -65,12 +65,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     protected void setQuestionOnScreen(){
-        currentQuestion=questionList.get(count);
         if(count<totalQuestionCount){
+            currentQuestion=questionList.get(count);
             btn[0].setText(currentQuestion.getOptionA());
             btn[1].setText(currentQuestion.getOptionB());
             btn[2].setText(currentQuestion.getOptionC());
             btn[3].setText(currentQuestion.getOptionD());
+            count++;
         }
         else{
             endQuiz();
@@ -78,9 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void endQuiz(){
-        count=0;
-        //TODO: find another way to end the program since finish() crashes the app
-        finish();
+        displayEndDialog();
     }
 
     @Override
@@ -106,7 +105,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(yourAnswer.equals(currentQuestion.getAnswer())){
             Log.i("log","Correct answer!");
             displayPositiveDialog();
-            count++;
+            Log.i("log","Count is now " + count + " out of " + totalQuestionCount);
+            if(count==totalQuestionCount)
+                endQuiz();
         }
         else{
             Log.i("log","Wrong answer!"+" The correct answer is " + currentQuestion.getAnswer());
@@ -146,6 +147,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
+        dialogBox.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialogBox.show();
+    }
+
+    private void displayEndDialog(){
+        dialogBox.setContentView(R.layout.popup_end);
+        starImg=(ImageView)dialogBox.findViewById(R.id.starImg);
+        returnToMenu=(Button)dialogBox.findViewById(R.id.returnToHome);
+
+        returnToMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialogBox.dismiss();
+                finish();
+            }
+        });
         dialogBox.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialogBox.show();
     }

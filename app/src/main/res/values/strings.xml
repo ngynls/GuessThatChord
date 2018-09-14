@@ -16,4 +16,5 @@
     <string name="nextQuestion">Next Question</string>
     <string name="tryAgain">Try again</string>
     <string name="thanks">Thanks for playing!</string>
+    <string name="answered">You have answered all the questions correctly!</string>
 </resources>

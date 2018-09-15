@@ -19,4 +19,5 @@
     <string name="answered">You have answered all the questions correctly!</string>
     <string name="mcq">Multiple choice</string>
     <string name="stt">Speech to text</string>
+    <string name="mic">Press here to answer</string>
 </resources>

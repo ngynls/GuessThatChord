@@ -15,11 +15,19 @@ public class DbHelper extends SQLiteOpenHelper {
 
     private static final String DB_NAME="GuessThatChord.db";
     private static final int DB_VERSION=1;
+    private static DbHelper instance;
 
     private SQLiteDatabase db;
 
-    DbHelper(Context context) {
+    private DbHelper(Context context) {
         super(context, DB_NAME,null, DB_VERSION);
+    }
+
+    public static synchronized DbHelper getInstance(Context context){
+        if(instance==null)
+            instance=new DbHelper(context);
+
+        return instance;
     }
 
     @Override

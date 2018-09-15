@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         dialogBox=new Dialog(this);
 
-        DbHelper helper=new DbHelper(this);
+        DbHelper helper=DbHelper.getInstance(this);
         questionList=helper.getAllQuestions();
         totalQuestionCount=questionList.size();
         Collections.shuffle(questionList);

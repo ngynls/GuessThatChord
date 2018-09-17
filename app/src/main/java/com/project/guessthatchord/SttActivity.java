@@ -138,6 +138,7 @@ public class SttActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 setQuestionOnScreen();
+                hint.setText(R.string.emptyStr);
                 dialogBox.dismiss();
             }
         });

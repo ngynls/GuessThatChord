@@ -10,7 +10,6 @@
     <string name="optionB">Option B</string>
     <string name="optionC">Option C</string>
     <string name="optionD">Option D</string>
-    <string name="submit">Submit result</string>
     <string name="correct">Correct answer!</string>
     <string name="wrong">Wrong answer!</string>
     <string name="nextQuestion">Next Question</string>
@@ -20,4 +19,6 @@
     <string name="mcq">Multiple choice</string>
     <string name="stt">Speech to text</string>
     <string name="mic">Press here to answer</string>
+    <string name="hint">Give me a hint</string>
+    <string name="emptyStr"> </string>
 </resources>

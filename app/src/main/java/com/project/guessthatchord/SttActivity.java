@@ -10,9 +10,11 @@ import android.speech.RecognizerIntent;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -26,7 +28,8 @@ public class SttActivity extends AppCompatActivity {
     MediaPlayer mediaPlayer;
     Dialog dialogBox;
     ImageView correctAnswerImg, incorrectAnswerImg, starImg;
-    Button nextQuestion, tryAgain, returnToMenu;
+    TextView hint;
+    Button nextQuestion, tryAgain, returnToMenu, hintButton;
 
     List<Question> questionList;
     private Question currentQuestion;
@@ -47,6 +50,9 @@ public class SttActivity extends AppCompatActivity {
 
         audioButton=findViewById(R.id.playButton);
         micButton=findViewById(R.id.micIcon);
+        hintButton=findViewById(R.id.hintButton);
+
+        hint=findViewById(R.id.hint);
 
         setQuestionOnScreen();
 
@@ -66,7 +72,6 @@ public class SttActivity extends AppCompatActivity {
         micButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO:add speech to text functionality here
                 Intent intent= new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
                 intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
                 intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.ENGLISH);
@@ -78,6 +83,13 @@ public class SttActivity extends AppCompatActivity {
                 }
             }
         });
+
+        hintButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                hint.setText(currentQuestion.getHint());
+            }
+        });
     }
 
     @Override
@@ -86,6 +98,7 @@ public class SttActivity extends AppCompatActivity {
         if(requestCode==200){
             if(resultCode== RESULT_OK && data!=null){
                 ArrayList<String> result=data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+                Log.i("log","You said " + result.get(0));
                 checkAnswer(result.get(0));
             }
         }
@@ -100,9 +113,9 @@ public class SttActivity extends AppCompatActivity {
             endQuiz();
     }
 
-    private void checkAnswer(String result){
-        //TODO: use in the onclick function for the micButton
-        String yourAnswer=result;
+    private void checkAnswer(String yourAnswer){
+        //TODO: some answers don't start with caps (eg: A,E major is displayed as a major, e major)
+        // D major= either the major or D major
         if(yourAnswer.equals(currentQuestion.getAnswer_verbose())){
             displayPositiveDialog();
             if(count==totalQuestionCount)

@@ -99,7 +99,9 @@ public class SttActivity extends AppCompatActivity {
             if(resultCode== RESULT_OK && data!=null){
                 ArrayList<String> result=data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                 Log.i("log","You said " + result.get(0));
-                checkAnswer(result.get(0));
+                String formattedAnswer=result.get(0).substring(0,1).toUpperCase()+result.get(0).substring(1);
+                Log.i("log","Formatted answer is " + formattedAnswer);
+                checkAnswer(formattedAnswer);
             }
         }
     }
@@ -114,8 +116,6 @@ public class SttActivity extends AppCompatActivity {
     }
 
     private void checkAnswer(String yourAnswer){
-        //TODO: some answers don't start with caps (eg: A,E major is displayed as a major, e major)
-        // D major= either the major or D major
         if(yourAnswer.equals(currentQuestion.getAnswer_verbose())){
             displayPositiveDialog();
             if(count==totalQuestionCount)

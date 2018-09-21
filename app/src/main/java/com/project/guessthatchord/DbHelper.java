@@ -47,6 +47,7 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
     private void addQuestions() {
+        // Major chords
         Question q1=new Question("cmajor","E","D","C","F","C_","C","C major");
         addQuestion(q1);
         Question q2=new Question("dmajor","D","G","E","C","D_","D","D major");
@@ -61,7 +62,23 @@ public class DbHelper extends SQLiteOpenHelper {
         addQuestion(q6);
         Question q7=new Question("bmajor","D#","F#","B","E","B_","B","B major");
         addQuestion(q7);
-        //TODO:Minor chords
+        //Minor chords
+        Question q8=new Question("cminor","Gm","C7","Fm","Cm","C_","Cm","C minor");
+        addQuestion(q8);
+        Question q9=new Question("dminor","A#","C#m","Dm","Dm7","D_","Dm","D minor");
+        addQuestion(q9);
+        Question q10=new Question("eminor","Em","D7","Gbm","Ab7","E_","Em","E minor");
+        addQuestion(q10);
+        Question q11= new Question("fminor","Bb","Fm","G","Em","F_","Fm","F minor");
+        addQuestion(q11);
+        Question q12=new Question("gminor","Gm","Cm","G#m","D#m","G_","Gm","G minor");
+        addQuestion(q12);
+        Question q13=new Question("aminor","Cm","Gm","Bm","Am","A_","Am","A minor");
+        addQuestion(q13);
+        Question q14=new Question("bminor","B7","Gbm","A#m","Bm","B_","Bm","B minor");
+        addQuestion(q14);
+        //TODO: 7th chords
+
     }
 
     private void addQuestion(Question q){

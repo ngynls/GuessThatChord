@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">GuessThatChord</string>
+    <string name="play">Lancer</string>
+    <string name="about">À propos</string>
+    <string name="returnToHome">Retour au menu</string>
+    <string name="about_description">GuessThatChord est un outil d\'entrainement sonore pour ceux qui veulent acquérir l\'oreille absolue.</string>
+    <string name="about_description2">Pour chaque question, essayez d\'identifier l\'accord sans l\'aide d'une note de référence.  </string>
+    <string name="about_description3">Veuillez practiquer quotidiennement afin d\'obtenir l\'oreille parfaite!</string>
+    <string name="optionA">Option A</string>
+    <string name="optionB">Option B</string>
+    <string name="optionC">Option C</string>
+    <string name="optionD">Option D</string>
+    <string name="correct">Bonne réponse!</string>
+    <string name="wrong">Mauvaise réponse!</string>
+    <string name="nextQuestion">Prochaine question</string>
+    <string name="tryAgain">Réessayer</string>
+    <string name="thanks">Merci beaucoup </string>
+    <string name="answered">Vous avez répondu à toutes nos questions</string>
+    <string name="mcq">Choix multiple</string>
+    <string name="stt">Discours à texte</string>
+    <string name="mic">Appuyez pour répondre</string>
+    <string name="hint">Donnez moi un indice</string>
+    <string name="emptyStr"> </string>
+</resources>

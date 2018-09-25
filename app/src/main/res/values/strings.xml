@@ -20,5 +20,6 @@
     <string name="stt">Speech to text</string>
     <string name="mic">Press here to answer</string>
     <string name="hint">Give me a hint</string>
+    <string name="prompt">Please specify the chord type (major, minor, etc) in your answer</string>
     <string name="emptyStr"> </string>
 </resources>

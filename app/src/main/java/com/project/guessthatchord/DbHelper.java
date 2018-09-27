@@ -62,7 +62,7 @@ public class DbHelper extends SQLiteOpenHelper {
         addQuestion(q6);
         Question q7=new Question("bmajor","D#","F#","B","E","B_","B","B major");
         addQuestion(q7);
-        //Minor chords
+        // Minor chords
         Question q8=new Question("cminor","Gm","C7","Fm","Cm","C_","Cm","C minor");
         addQuestion(q8);
         Question q9=new Question("dminor","A#","C#m","Dm","Dm7","D_","Dm","D minor");
@@ -77,7 +77,22 @@ public class DbHelper extends SQLiteOpenHelper {
         addQuestion(q13);
         Question q14=new Question("bminor","B7","Gbm","A#m","Bm","B_","Bm","B minor");
         addQuestion(q14);
-        //TODO: 7th chords
+        // Dominant 7th chords
+        Question q15=new Question("c7","D#7","C7","F#7","G7","C_","C7","C7");
+        addQuestion(q15);
+        Question q16=new Question("d7","G#7","Ab7","Em7","D7","D_","D7","D7");
+        addQuestion(q16);
+        Question q17=new Question("e7","Db","Gm7","E7","Cm7","E_","E7","E7");
+        addQuestion(q17);
+        Question q18=new Question("f7","Em7","Abm","Gm7","F7","F_","F7","F7");
+        addQuestion(q18);
+        Question q19=new Question("g7","Gm7","G7","Em7","E7","G_","G7","G7");
+        addQuestion(q19);
+        Question q20=new Question("a7","A7","Db","Gm","E7","A_","A7","A7");
+        addQuestion(q20);
+        Question q21=new Question("b7","G#7","Cm","D7","Abm","B_","B7","B7");
+        addQuestion(q21);
+        // Major 7th chords
 
     }
 

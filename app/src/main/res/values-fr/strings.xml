@@ -4,7 +4,7 @@
     <string name="about">À propos</string>
     <string name="returnToHome">Retour au menu</string>
     <string name="about_description">GuessThatChord est un outil d\'entrainement sonore pour ceux qui veulent acquérir l\'oreille absolue.</string>
-    <string name="about_description2">Pour chaque question, essayez d\'identifier l\'accord sans l\'aide d'une note de référence.  </string>
+    <string name="about_description2">Pour chaque question, essayez d\'identifier l\'accord sans l\'aide d\'une note de référence.  </string>
     <string name="about_description3">Veuillez practiquer quotidiennement afin d\'obtenir l\'oreille parfaite!</string>
     <string name="optionA">Option A</string>
     <string name="optionB">Option B</string>

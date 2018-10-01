@@ -9,8 +9,8 @@
 
     <Button
         android:id="@+id/optionA"
-        android:layout_width="260dp"
-        android:layout_height="50dp"
+        android:layout_width="240dp"
+        android:layout_height="48dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
@@ -21,15 +21,15 @@
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.401" />
+        app:layout_constraintVertical_bias="0.379" />
 
     <Button
         android:id="@+id/optionB"
-        android:layout_width="260dp"
-        android:layout_height="50dp"
+        android:layout_width="240dp"
+        android:layout_height="48dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
@@ -40,15 +40,15 @@
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.549" />
+        app:layout_constraintVertical_bias="0.542" />
 
     <Button
         android:id="@+id/optionC"
-        android:layout_width="260dp"
-        android:layout_height="50dp"
+        android:layout_width="240dp"
+        android:layout_height="48dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
@@ -66,8 +66,8 @@
 
     <Button
         android:id="@+id/optionD"
-        android:layout_width="260dp"
-        android:layout_height="50dp"
+        android:layout_width="240dp"
+        android:layout_height="48dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
@@ -85,8 +85,8 @@
 
     <ImageView
         android:id="@+id/playButton"
-        android:layout_width="316dp"
-        android:layout_height="95dp"
+        android:layout_width="277dp"
+        android:layout_height="79dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
@@ -96,9 +96,10 @@
         android:contentDescription="@string/play"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.02"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/play_icon" />
 
 

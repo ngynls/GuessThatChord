@@ -5,6 +5,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import com.project.guessthatchord.DbContract.*;
 
@@ -42,6 +43,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+        Log.i("Log","onUpgrade is called");
         db.execSQL("DROP TABLE IF EXISTS " + DbTable.DB_NAME);
         onCreate(db);
     }

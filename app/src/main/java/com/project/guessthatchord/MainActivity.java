@@ -35,11 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         dialogBox=new Dialog(this);
-
         DbHelper helper=DbHelper.getInstance(this);
-        questionList=helper.getAllQuestions();
-        totalQuestionCount=questionList.size();
-        Collections.shuffle(questionList);
 
         audioButton=findViewById(R.id.playButton);
         for(int i=0; i<btn.length;i++){
@@ -47,12 +43,57 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             btn[i].setOnClickListener(this);
         }
 
+        questionList=helper.getAllQuestions();
+        totalQuestionCount=questionList.size();
+        Collections.shuffle(questionList);
         setQuestionOnScreen();
 
         audioButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //TODO:to update db with new values, reinstall the app in the emulator
+                try {
+                    int resId=getResources().getIdentifier(currentQuestion.getAudioSource(),"raw",getPackageName());
+                    mediaPlayer=MediaPlayer.create(MainActivity.this, resId);
+                    mediaPlayer.start();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    //saves state of activity after screen orientation change
+    @Override
+    protected void onSaveInstanceState(Bundle outState){
+        outState.putInt("savedCount",count);
+        outState.putString("savedAudio",currentQuestion.getAudioSource());
+        outState.putString("savedOptionA",currentQuestion.getOptionA());
+        outState.putString("savedOptionB",currentQuestion.getOptionB());
+        outState.putString("savedOptionC",currentQuestion.getOptionC());
+        outState.putString("savedOptionD",currentQuestion.getOptionD());
+        outState.putString("savedAnswer",currentQuestion.getAnswer());
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle outState){
+        super.onRestoreInstanceState(outState);
+        count=outState.getInt("savedCount");
+        currentQuestion.setAudioSource(outState.getString("savedAudio"));
+        currentQuestion.setAnswer(outState.getString("savedAnswer"));
+        currentQuestion.setChoiceA(outState.getString("savedOptionA"));
+        currentQuestion.setChoiceB(outState.getString("savedOptionB"));
+        currentQuestion.setChoiceC(outState.getString("savedOptionC"));
+        currentQuestion.setChoiceD(outState.getString("savedOptionD"));
+        btn[0].setText(currentQuestion.getOptionA());
+        btn[1].setText(currentQuestion.getOptionB());
+        btn[2].setText(currentQuestion.getOptionC());
+        btn[3].setText(currentQuestion.getOptionD());
+
+        audioButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 try {
                     int resId=getResources().getIdentifier(currentQuestion.getAudioSource(),"raw",getPackageName());
                     mediaPlayer=MediaPlayer.create(MainActivity.this, resId);

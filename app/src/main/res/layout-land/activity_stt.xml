@@ -73,11 +73,11 @@
         android:layout_marginTop="8dp"
         android:text="@string/emptyStr"
         android:textAlignment="center"
-        android:textSize="25sp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.641" />
+        app:layout_constraintVertical_bias="0.709" />
 
 </android.support.constraint.ConstraintLayout>

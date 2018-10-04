@@ -110,7 +110,12 @@ public class SttActivity extends AppCompatActivity {
                 Intent intent= new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
                 intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
                 intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.ENGLISH);
-                intent.putExtra(RecognizerIntent.EXTRA_PROMPT,R.string.prompt);
+
+                if(Locale.getDefault().getLanguage().equals("en"))
+                    intent.putExtra(RecognizerIntent.EXTRA_PROMPT,"Please specify the chord type (major, minor, etc) in your answer");
+                else if (Locale.getDefault().getLanguage().equals("fr"))
+                    intent.putExtra(RecognizerIntent.EXTRA_PROMPT,"Indiquer le type d'accord (majeur, mineur, etc) dans votre réponse");
+
                 try{
                     startActivityForResult(intent,200);
                 }

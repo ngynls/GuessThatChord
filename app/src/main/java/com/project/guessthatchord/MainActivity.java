@@ -47,20 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         totalQuestionCount=questionList.size();
         Collections.shuffle(questionList);
         setQuestionOnScreen();
-
-        audioButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //TODO:to update db with new values, reinstall the app in the emulator
-                try {
-                    int resId=getResources().getIdentifier(currentQuestion.getAudioSource(),"raw",getPackageName());
-                    mediaPlayer=MediaPlayer.create(MainActivity.this, resId);
-                    mediaPlayer.start();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
+        setButtonsOnClickListener();
     }
 
     //saves state of activity after screen orientation change
@@ -91,9 +78,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn[2].setText(currentQuestion.getOptionC());
         btn[3].setText(currentQuestion.getOptionD());
 
+        setButtonsOnClickListener();
+    }
+
+    protected void setButtonsOnClickListener(){
         audioButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //TODO:to update db with new values, reinstall the app in the emulator
                 try {
                     int resId=getResources().getIdentifier(currentQuestion.getAudioSource(),"raw",getPackageName());
                     mediaPlayer=MediaPlayer.create(MainActivity.this, resId);

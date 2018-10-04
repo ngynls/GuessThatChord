@@ -55,7 +55,42 @@ public class SttActivity extends AppCompatActivity {
         hint=findViewById(R.id.hint);
 
         setQuestionOnScreen();
+        setButtonsOnClickListener();
+    }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState){
+        outState.putInt("savedCount", count);
+        outState.putString("savedAudio",currentQuestion.getAudioSource());
+        outState.putString("savedHint",currentQuestion.getHint());
+        outState.putString("savedAnswer",currentQuestion.getAnswer_verbose());
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle outState){
+        super.onRestoreInstanceState(outState);
+        count=outState.getInt("savedCount");
+        currentQuestion.setHint(outState.getString("savedHint"));
+        currentQuestion.setAudioSource(outState.getString("savedAudio"));
+        currentQuestion.setAnswer_verbose(outState.getString("savedAnswer"));
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==200){
+            if(resultCode== RESULT_OK && data!=null){
+                ArrayList<String> result=data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+                Log.i("log","You said " + result.get(0));
+                String formattedAnswer=result.get(0).substring(0,1).toUpperCase()+result.get(0).substring(1);
+                Log.i("log","Formatted answer is " + formattedAnswer);
+                checkAnswer(formattedAnswer);
+            }
+        }
+    }
+
+    protected void setButtonsOnClickListener(){
         audioButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,20 +126,6 @@ public class SttActivity extends AppCompatActivity {
                 hint.setText(currentQuestion.getHint());
             }
         });
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==200){
-            if(resultCode== RESULT_OK && data!=null){
-                ArrayList<String> result=data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                Log.i("log","You said " + result.get(0));
-                String formattedAnswer=result.get(0).substring(0,1).toUpperCase()+result.get(0).substring(1);
-                Log.i("log","Formatted answer is " + formattedAnswer);
-                checkAnswer(formattedAnswer);
-            }
-        }
     }
 
     protected void setQuestionOnScreen() {

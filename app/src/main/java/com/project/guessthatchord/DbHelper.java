@@ -92,7 +92,7 @@ public class DbHelper extends SQLiteOpenHelper {
         addQuestion(q19);
         Question q20=new Question("a7","A7","Db","Gm","E7","A_","A7","A7");
         addQuestion(q20);
-        Question q21=new Question("b7","G#7","Cm","D7","Abm","B_","B7","B7");
+        Question q21=new Question("b7","G#7","Cm","B7","Abm","B_","B7","B7");
         addQuestion(q21);
         // Major 7th chords
 

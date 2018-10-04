@@ -20,6 +20,6 @@
     <string name="stt">Discours à texte</string>
     <string name="mic">Appuyez pour répondre</string>
     <string name="hint">Donnez moi un indice</string>
-    <string name="prompt">Indiquer le type d\'accord (majeur, mineur, etc) dans votre réponse</string>
+    <string name="prompt">Veuillez indiquer le type d\'accord (majeur, mineur, etc) dans votre réponse</string>
     <string name="emptyStr"> </string>
 </resources>

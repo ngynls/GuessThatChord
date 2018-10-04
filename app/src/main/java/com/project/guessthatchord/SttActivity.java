@@ -114,7 +114,7 @@ public class SttActivity extends AppCompatActivity {
                 if(Locale.getDefault().getLanguage().equals("en"))
                     intent.putExtra(RecognizerIntent.EXTRA_PROMPT,"Please specify the chord type (major, minor, etc) in your answer");
                 else if (Locale.getDefault().getLanguage().equals("fr"))
-                    intent.putExtra(RecognizerIntent.EXTRA_PROMPT,"Indiquer le type d'accord (majeur, mineur, etc) dans votre réponse");
+                    intent.putExtra(RecognizerIntent.EXTRA_PROMPT,"Veuillez indiquer le type d'accord (majeur, mineur, etc) dans votre réponse");
 
                 try{
                     startActivityForResult(intent,200);

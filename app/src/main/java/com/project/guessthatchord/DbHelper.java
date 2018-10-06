@@ -64,36 +64,46 @@ public class DbHelper extends SQLiteOpenHelper {
         addQuestion(q6);
         Question q7=new Question("bmajor","D#","F#","B","E","B_","B","B major");
         addQuestion(q7);
-        // Minor chords
-        Question q8=new Question("cminor","Gm","C7","Fm","Cm","C_","Cm","C minor");
+        Question q8=new Question("csharp","C","C#","D#","D","C_","C#","C sharp major");
         addQuestion(q8);
-        Question q9=new Question("dminor","A#","C#m","Dm","Dm7","D_","Dm","D minor");
+        Question q9=new Question("dsharp","C#","F#","E","D#","D_","D#","D sharp major");
         addQuestion(q9);
-        Question q10=new Question("eminor","Em","D7","Gbm","Ab7","E_","Em","E minor");
+        Question q10=new Question("fsharp","F#","G#","D#","E","F_","F#","F sharp major");
         addQuestion(q10);
-        Question q11= new Question("fminor","Bb","Fm","G","Em","F_","Fm","F minor");
+        Question q11=new Question("gsharp","A#","A","G#","G","G_","G#","G sharp major");
         addQuestion(q11);
-        Question q12=new Question("gminor","Gm","Cm","G#m","D#m","G_","Gm","G minor");
+        Question q12=new Question("asharp","G","A#","G#","B","A_","A#","A sharp major");
         addQuestion(q12);
-        Question q13=new Question("aminor","Cm","Gm","Bm","Am","A_","Am","A minor");
+        // Minor chords
+        Question q13=new Question("cminor","Gm","C7","Fm","Cm","C_","Cm","C minor");
         addQuestion(q13);
-        Question q14=new Question("bminor","B7","Gbm","A#m","Bm","B_","Bm","B minor");
+        Question q14=new Question("dminor","A#","C#m","Dm","Dm7","D_","Dm","D minor");
         addQuestion(q14);
-        // Dominant 7th chords
-        Question q15=new Question("c7","D#7","C7","F#7","G7","C_","C7","C7");
+        Question q15=new Question("eminor","Em","D7","Gbm","Ab7","E_","Em","E minor");
         addQuestion(q15);
-        Question q16=new Question("d7","G#7","Ab7","Em7","D7","D_","D7","D7");
+        Question q16= new Question("fminor","Bb","Fm","G","Em","F_","Fm","F minor");
         addQuestion(q16);
-        Question q17=new Question("e7","Db","Gm7","E7","Cm7","E_","E7","E7");
+        Question q17=new Question("gminor","Gm","Cm","G#m","D#m","G_","Gm","G minor");
         addQuestion(q17);
-        Question q18=new Question("f7","Em7","Abm","Gm7","F7","F_","F7","F7");
+        Question q18=new Question("aminor","Cm","Gm","Bm","Am","A_","Am","A minor");
         addQuestion(q18);
-        Question q19=new Question("g7","Gm7","G7","Em7","E7","G_","G7","G7");
+        Question q19=new Question("bminor","B7","Gbm","A#m","Bm","B_","Bm","B minor");
         addQuestion(q19);
-        Question q20=new Question("a7","A7","Db","Gm","E7","A_","A7","A7");
+        // Dominant 7th chords
+        Question q20=new Question("c7","D#7","C7","F#7","G7","C_","C7","C7");
         addQuestion(q20);
-        Question q21=new Question("b7","G#7","Cm","B7","Abm","B_","B7","B7");
+        Question q21=new Question("d7","G#7","Ab7","Em7","D7","D_","D7","D7");
         addQuestion(q21);
+        Question q22=new Question("e7","Db","Gm7","E7","Cm7","E_","E7","E7");
+        addQuestion(q22);
+        Question q23=new Question("f7","Em7","Abm","Gm7","F7","F_","F7","F7");
+        addQuestion(q23);
+        Question q24=new Question("g7","Gm7","G7","Em7","E7","G_","G7","G7");
+        addQuestion(q24);
+        Question q25=new Question("a7","A7","Db","Gm","E7","A_","A7","A7");
+        addQuestion(q25);
+        Question q26=new Question("b7","G#7","Cm","B7","Abm","B_","B7","B7");
+        addQuestion(q26);
         // Major 7th chords
 
     }
